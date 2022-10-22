@@ -1,0 +1,29 @@
+/* основа */
+body {
+  font-family: 'Roboto', sans-serif;
+
+  // font-weight: 500;
+  // font-size: 12px;
+  // line-height: 20px;
+  /* or 167% */
+
+  color: #000000;
+
+  // background-color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// .section {
+//   padding-top: 94px;
+//   padding-bottom: 94px;
+// }
+
+button {
+  cursor: pointer;
+  border: none;
+}

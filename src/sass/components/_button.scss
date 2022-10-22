@@ -1,0 +1,43 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.header__buttons {
+  margin-top: 46px;
+  padding-bottom: 65px;
+}
+// .buttons__item {
+// }
+.header__buttons-item:not(:last-child) {
+  margin-right: 20px;
+
+  @include mq(tablet) {
+    margin-right: 15px;
+  }
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 44px;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  @include font($fw: 500, $fs: 12px, $lh: 16px, $color: $secondaryTextColor);
+
+  @include mq(tablet) {
+    width: 136px;
+  }
+}
+// .header__button {
+// }
+.button--on {
+  background-color: $accentColor;
+  border: 1px solid $accentColor;
+  filter: drop-shadow(0px 8px 43px $accentColor);
+}
+.button--off {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+}

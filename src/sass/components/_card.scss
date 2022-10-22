@@ -1,0 +1,187 @@
+.card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  overflow: auto;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.card__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  max-width: 280px;
+  min-height: 958px;
+  padding: 48px 20px 41px;
+
+  background-color: #ffffff;
+
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.22);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include mq(tablet) {
+    display: flex;
+    min-width: 618px;
+    min-height: 562px;
+    padding: 41px 29px;
+  }
+
+  @include mq(desktop) {
+    min-width: 882px;
+    min-height: 568px;
+    padding: 50px 30px 40px;
+  }
+
+  .card.is-hidden & {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.card__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: transparent;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card__close:hover {
+  fill: $accentColor;
+  transform: rotate(-90deg);
+}
+
+.card__image-wrapper {
+  margin-bottom: 30px;
+
+  @include mq(tablet) {
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  @include mq(desktop) {
+    margin-right: 30px;
+  }
+}
+.card__image {
+  border-radius: 5px;
+
+  @include mq(tablet) {
+    width: 264px;
+  }
+
+  @include mq(desktop) {
+    width: 396px;
+  }
+}
+.card__content {
+  @include mq(tablet) {
+    width: 264px;
+  }
+
+  @include mq(desktop) {
+    width: 396px;
+  }
+}
+.card__title {
+  margin-bottom: 20px;
+
+  @include font($fw: 500, $fs: 20px, $lh: 23px);
+
+  @include mq(desktop) {
+    @include font($fw: 500, $fs: 30px, $lh: 35px);
+  }
+}
+.card__film-specification {
+  margin-bottom: 20px;
+}
+.card__film-characteristics {
+  display: flex;
+  align-items: baseline;
+  height: 26px;
+}
+.card__film-point {
+  min-width: 108px;
+
+  @include font($fw: 500, $fs: 12px, $lh: 16px, $color: $cardSecondaryTextColor);
+
+  @include mq(desktop) {
+    min-width: 152px;
+  }
+}
+.card__film-data {
+  display: flex;
+  align-items: baseline;
+
+  @include font($fw: 500, $fs: 12px, $lh: 16px);
+}
+.card__film-data-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 16px;
+
+  margin-right: 5px;
+
+  background-color: $accentColor;
+  border-radius: 5px;
+
+  @include font($fw: 500, $fs: 12px, $lh: 14px, $color: $secondaryTextColor);
+}
+
+.card__film-write-up {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+
+  @include font($fw: 500, $fs: 12px, $lh: 16px);
+}
+.card__film-description {
+  margin-bottom: 21px;
+  @include font($fw: 500, $fs: 12px, $lh: 20px);
+}
+
+.card__buttons-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.button {
+  width: 113px;
+
+  @include mq(tablet) {
+    width: 125px;
+  }
+
+  @include mq(desktop) {
+    width: 136px;
+  }
+}
+
+.card__button--on {
+  filter: none;
+}
+
+.card__button--off {
+  color: $primaryTextColor;
+  border: 1px solid $primaryTextColor;
+}

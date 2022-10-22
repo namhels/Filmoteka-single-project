@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="header__container container">
+    <nav class="header__nav">
+      <a href="./index.html" class="logo">
+        <svg class="logo__icon" width="24" height="24">
+          <use href="./images/spriteIcons.svg#icon-film"></use>
+        </svg>
+        <span class="logo__text">Filmoteka</span></a
+      >
+      <ul class="nav-list">
+        <li class="nav-list__item nav-list__item--home nav-list__item--current">home</li>
+        <li class="nav-list__item nav-list__item--library">my library</li>
+      </ul>
+    </nav>
+
+    <div class="header-form__wrapper">
+      <form class="header-form" name="header-form" autocomplete="off" action="">
+        <label for="search-input" class="header-form__label"></label>
+        <input
+          class="header-form__input"
+          id="search-input"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Поиск фильмов"
+        />
+
+        <button class="header-form__submit" type="submit">
+          <svg class="header-form__icon" width="12" height="12">
+            <use href="./images/spriteIcons.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+      <p class="header-form__error-text">
+        Search result not successful. Enter the correct movie name
+      </p>
+    </div>
+
+    <ul class="buttons header__buttons">
+      <li class="buttons__item header__buttons-item">
+        <button
+          class="button button--on header__button"
+          type="button"
+          data-btn="watched"
+          data-modal-open
+        >
+          watched
+        </button>
+      </li>
+      <li class="buttons__item header__buttons-item">
+        <button class="button button--off header__button" type="button" data-btn="queue">
+          queue
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>

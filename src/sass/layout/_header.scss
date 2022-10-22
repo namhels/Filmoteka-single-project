@@ -1,0 +1,183 @@
+.header {
+  padding-top: 46px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: rgba(0, 0, 0, 0.56);
+
+  background-image: url(../images/home/home-sm.jpg);
+  background-image: -webkit-image-set(url('../images/home/home-sm.webp') 1x);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mq(retina) {
+    background-image: url('../images/home/home@2x-sm.jpg');
+    background-image: -webkit-image-set(url('../images/home/home@2x-sm.webp') 2x);
+  }
+
+  @include mq(tablet) {
+    background-image: url(../images/home/home-md.jpg);
+    background-image: -webkit-image-set(url('../images/home/home-md.webp') 1x);
+
+    @include mq(retina) {
+      background-image: url('../images/home/home@2x-md.jpg');
+      background-image: -webkit-image-set(url('../images/home/home@2x-md.webp') 2x);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/home/home-lg.jpg);
+    background-image: -webkit-image-set(url('../images/home/home-lg.webp') 1x);
+
+    @include mq(retina) {
+      background-image: url('../images/home/home@2x-lg.jpg');
+      background-image: -webkit-image-set(url('../images/home/home@2x-lg.webp') 2x);
+    }
+  }
+
+  &.header--library {
+    background-image: url(../images/library/library-sm.jpg);
+    background-image: -webkit-image-set(url('../images/library/library-sm.webp') 1x);
+
+    @include mq(retina) {
+      background-image: url('../images/library/library@2x-sm.jpg');
+      background-image: -webkit-image-set(url('../images/library/library@2x-sm.webp') 2x);
+    }
+
+    @include mq(tablet) {
+      background-image: url(../images/library/library-md.jpg);
+      background-image: -webkit-image-set(url('../images/library/library-md.webp') 1x);
+
+      @include mq(retina) {
+        background-image: url('../images/library/library@2x-md.jpg');
+        background-image: -webkit-image-set(url('../images/library/library@2x-md.webp') 2x);
+      }
+    }
+    @include mq(desktop) {
+      background-image: url(../images/library/library-lg.jpg);
+      background-image: -webkit-image-set(url('../images/library/library-lg.webp') 1x);
+
+      @include mq(retina) {
+        background-image: url('../images/library/library@2x-lg.jpg');
+        background-image: -webkit-image-set(url('../images/library/library@2x-lg.webp') 2x);
+      }
+    }
+  }
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo__icon {
+  // fill: $iconColor;
+  // fill: currentColor;
+  margin-right: 10px;
+}
+.logo__text {
+  display: none;
+
+  @include mq(tablet) {
+    display: block;
+
+    @include font($fw: 500, $fs: 30px, $lh: 35px, $color: $secondaryTextColor);
+  }
+}
+
+.nav-list {
+  display: flex;
+}
+.nav-list__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include font($fw: 500, $fs: 12px, $lh: 14px, $color: $secondaryTextColor);
+  &:not(:last-child) {
+    margin-right: 39px;
+  }
+}
+
+.nav-list__item--current::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: $accentColor;
+}
+
+.header-form__wrapper {
+  position: relative;
+  padding-bottom: 117px;
+  margin-top: 41px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-form {
+  position: absolute;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  // transition: opacity 250ms linear, visibility 250ms linear;
+  // &.is-hidden {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   pointer-events: none;
+  // }
+
+  @include mq(tablet) {
+    width: 336px;
+  }
+}
+.header-form__input {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid $secondaryTextColor;
+
+  @include font($fw: 400, $fs: 14px, $lh: 16px);
+
+  &::placeholder {
+    color: $secondaryTextColor;
+  }
+
+  @include mq(tablet) {
+    display: flex;
+    justify-content: center;
+    width: 336px;
+  }
+}
+.header-form__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+}
+// .header-form__icon {
+// }
+.header-form__error-text {
+  position: absolute;
+  bottom: 43px;
+  margin-top: 26px;
+  color: $errorTextColor;
+  text-align: left;
+}
