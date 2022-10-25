@@ -1,6 +1,8 @@
 import './sass/main.scss';
-import toggleModal from './js/modal';
-import onChangeHeader from './js/components/changeHeader';
+import './js/modal';
+import './js/components/changeHeader';
+import './js/api/apiThemoviedb';
+import './js/components/getMovies';
 
-onChangeHeader();
-toggleModal();
+// onChangeHeader();
+// toggleModal();

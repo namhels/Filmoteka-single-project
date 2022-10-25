@@ -154,7 +154,7 @@
   border: none;
   border-bottom: 0.5px solid $secondaryTextColor;
 
-  @include font($fw: 400, $fs: 14px, $lh: 16px);
+  @include font($fw: 400, $fs: 14px, $lh: 16px, $color: $secondaryTextColor);
 
   &::placeholder {
     color: $secondaryTextColor;
