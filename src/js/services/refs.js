@@ -9,6 +9,12 @@ const refs = {
 
   films: document.querySelector('.films'),
   error: document.querySelector('.error'),
+
+  card: document.querySelector('.card'),
+  card__close: document.querySelector('.card__close'),
+  card__button: document.querySelector('.card__button'),
+  card__close: document.querySelector('[data-btn="add to watched"]'),
+  card__close: document.querySelector('[data-btn="add to queue"]'),
 };
 
 export default refs;

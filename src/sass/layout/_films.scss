@@ -58,7 +58,11 @@
 }
 
 .films__year {
+  display: flex;
   margin-right: 10px;
+}
+.films__year-span {
+  margin-right: 3px;
 }
 
 .films__rating {
@@ -73,4 +77,35 @@
   border-radius: 5px;
 
   @include font($fw: 500, $fs: 12px, $lh: 14px, $color: $secondaryTextColor);
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 94px;
+  padding-bottom: 193px;
+
+  // min-width: 320px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: rgba(240, 233, 233, 0.156);
+
+  background-image: url(../images/error.jpg);
+  background-image: -webkit-image-set(url('../images/error.webp') 1x);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include font($fw: 500, $fs: 16px, $lh: 16px, $color: $errorTextColor);
+
+  @include mq(tablet) {
+    padding-top: 40px;
+    padding-bottom: 300px;
+
+    @include font($fw: 500, $fs: 32px, $lh: 16px, $color: $errorTextColor);
+  }
 }
