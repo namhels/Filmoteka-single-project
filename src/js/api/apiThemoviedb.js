@@ -9,21 +9,50 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 class apiThemoviedb {
   #API_KEY = '308f19df2a761157194efc58109ee68d';
   #page = 1;
-  #endpoint = '';
+  #query;
+  #id;
 
-  constructor({ endpoint }) {
-    this.#endpoint = endpoint;
-  }
+  fetchMovies = async (endpoint, params = '') => {
+    const { data } = await axios.get(`${endpoint}?${params}`);
+    return data;
+  };
 
-  async fetchMovies() {
-    const queryParams = new URLSearchParams({
+  getTrendingMovies = () => {
+    const endpoint = '/trending/movie/day';
+    const params = new URLSearchParams({
       api_key: this.#API_KEY,
       page: this.#page,
     });
+    return this.fetchMovies(endpoint, params);
+  };
 
-    const res = await axios.get(`/${this.#endpoint}?${queryParams}`);
-    return res.data;
-  }
+  movieSearch = () => {
+    const endpoint = '/search/movie';
+    const params = new URLSearchParams({
+      api_key: this.#API_KEY,
+      query: this.#query,
+      page: this.#page,
+      include_adult: false,
+    });
+    return this.fetchMovies(endpoint, params);
+  };
+
+  getMovie = () => {
+    const endpoint = `/movie/${this.#id}`;
+    const params = new URLSearchParams({
+      api_key: this.#API_KEY,
+      append_to_response: 'videos',
+    });
+    return this.fetchMovies(endpoint, params);
+  };
+
+  getGenres = () => {
+    const endpoint = '/genre/movie/list';
+    const params = new URLSearchParams({
+      api_key: this.#API_KEY,
+    });
+    return this.fetchMovies(endpoint, params);
+  };
 
   incrementPage() {
     this.#page += 1;
@@ -33,9 +62,28 @@ class apiThemoviedb {
     this.#page = 1;
   }
 
-  set endpoint(value) {
-    this.#endpoint = value;
+  get page() {
+    return this.#page;
   }
+  set page(newPage) {
+    this.#page = newPage;
+  }
+  get query() {
+    return this.#query;
+  }
+  set query(newQuery) {
+    this.#query = newQuery;
+  }
+  get id() {
+    return this.#id;
+  }
+  set id(newId) {
+    this.#id = newId;
+  }
+
+  // set endpoint(value) {
+  //   this.#endpoint = value;
+  // }
 }
 
 export default apiThemoviedb;

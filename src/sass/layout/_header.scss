@@ -121,7 +121,7 @@
 
 .header-form__wrapper {
   position: relative;
-  padding-bottom: 117px;
+  padding-bottom: 114px;
   margin-top: 41px;
 
   display: flex;
@@ -171,13 +171,4 @@
   top: 0;
   right: 0;
   background-color: transparent;
-}
-// .header-form__icon {
-// }
-.header-form__error-text {
-  position: absolute;
-  bottom: 43px;
-  margin-top: 26px;
-  color: $errorTextColor;
-  text-align: left;
 }

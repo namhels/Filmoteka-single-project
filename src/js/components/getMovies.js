@@ -1,19 +1,13 @@
 import refs from '../services/refs';
 import apiThemoviedb from '../api/apiThemoviedb';
-import moviesMarkup from '../templates/moviesMarkup';
-import { save } from '../services/localStorage';
+import { moviesMarkup } from '../templates/moviesMarkup';
 
-const api = new apiThemoviedb({ endpoint: 'trending/movie/day' });
-
-// api.fetchMovies();
+const api = new apiThemoviedb();
 
 const getMovies = async () => {
   try {
-    const { results, page, total_pages: totalPages } = await api.fetchMovies();
-    refs.films.classList.add('films');
-    refs.error.classList.remove('error');
+    const { results, page, total_pages: totalPages } = await api.getTrendingMovies();
     renderMovies(results);
-    save('movies', results);
   } catch (error) {
     handleError(error);
   }
@@ -28,9 +22,13 @@ const handleError = err => {
 
 const renderMovies = movies => {
   refs.error.textContent = '';
-  refs.films.insertAdjacentHTML('beforeend', moviesMarkup(movies));
+  refs.films.classList.add('films');
+  refs.error.classList.remove('error', 'no-movies');
+  refs.films.innerHTML = moviesMarkup(movies);
 };
 
-getMovies();
+setTimeout(() => {
+  getMovies();
+}, 100);
 
-export { handleError };
+export { getMovies, handleError, renderMovies };

@@ -17,6 +17,10 @@
   }
 }
 
+.films__item {
+  cursor: pointer;
+}
+
 .films__item:not(:last-child) {
   margin-bottom: 20px;
 
@@ -46,23 +50,10 @@
   }
 }
 
-.films__wrapper-data {
+.films__info {
   display: flex;
   align-items: center;
-
   @include font($fw: 500, $fs: 12px, $lh: 16px, $color: $accentColor);
-}
-
-.films__genre {
-  margin-right: 3px;
-}
-
-.films__year {
-  display: flex;
-  margin-right: 10px;
-}
-.films__year-span {
-  margin-right: 3px;
 }
 
 .films__rating {
@@ -72,6 +63,7 @@
 
   width: 36px;
   height: 16px;
+  margin-left: 10px;
 
   background-color: $accentColor;
   border-radius: 5px;
@@ -107,5 +99,24 @@
     padding-bottom: 300px;
 
     @include font($fw: 500, $fs: 32px, $lh: 16px, $color: $errorTextColor);
+  }
+}
+
+.no-movies {
+  padding-top: 3px;
+  background-image: url(../images/no-movies.jpg);
+  background-image: -webkit-image-set(url('../images/no-movies.webp') 1x);
+
+  text-align: center;
+  @include font($fs: 22px, $color: $errorTextColor);
+
+  @include mq(tablet) {
+    padding-top: 14px;
+    padding-bottom: 400px;
+    @include font($fs: 42px, $color: $errorTextColor);
+  }
+
+  @include mq(desktop) {
+    padding-bottom: 500px;
   }
 }

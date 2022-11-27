@@ -1,4 +1,4 @@
-.card {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,13 +18,13 @@
   }
 }
 
-.card__container {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
 
   max-width: 280px;
-  min-height: 958px;
+  // min-height: 958px;
   padding: 48px 20px 41px;
 
   background-color: #ffffff;
@@ -38,18 +38,24 @@
   @include mq(tablet) {
     display: flex;
     min-width: 618px;
-    min-height: 562px;
+    // min-height: 562px;
     padding: 41px 29px;
   }
 
   @include mq(desktop) {
     min-width: 882px;
-    min-height: 568px;
+    // min-height: 568px;
     padding: 50px 30px 40px;
   }
 
-  .card.is-hidden & {
+  .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.card {
+  @include mq(tablet) {
+    display: flex;
   }
 }
 
@@ -61,6 +67,9 @@
   height: 30px;
   padding: 0;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -165,23 +174,37 @@
   margin-right: 15px;
 }
 
-.button {
+.card__button {
   width: 113px;
+  color: $primaryTextColor;
+  background-color: transparent;
+  border: 1px solid $accentColor;
+
+  @include font($fw: 500, $fs: 9px, $lh: 16px, $color: $accentColor);
 
   @include mq(tablet) {
     width: 125px;
+    @include font($fw: 500, $fs: 10px, $lh: 16px, $color: $accentColor);
   }
 
   @include mq(desktop) {
     width: 136px;
+    @include font($fw: 500, $fs: 11px, $lh: 16px, $color: $accentColor);
   }
 }
 
 .card__button--on {
-  filter: none;
-}
+  background-color: $accentColor;
+  border: 1px solid $accentColor;
 
-.card__button--off {
-  color: $primaryTextColor;
-  border: 1px solid $primaryTextColor;
+  @include font($fw: 500, $fs: 9px, $lh: 16px, $color: $secondaryTextColor);
+
+  @include mq(tablet) {
+    @include font($fw: 500, $fs: 10px, $lh: 16px, $color: $secondaryTextColor);
+  }
+
+  @include mq(desktop) {
+    @include font($fw: 500, $fs: 11px, $lh: 16px, $color: $secondaryTextColor);
+  }
+  // filter: drop-shadow(0px 8px 43px $accentColor);
 }
