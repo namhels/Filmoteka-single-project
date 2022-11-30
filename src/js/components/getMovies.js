@@ -1,5 +1,6 @@
 import refs from '../services/refs';
 import apiThemoviedb from '../api/apiThemoviedb';
+// import pagination from '../components/pagination';
 import { moviesMarkup } from '../templates/moviesMarkup';
 
 const api = new apiThemoviedb();
@@ -30,5 +31,10 @@ const renderMovies = movies => {
 setTimeout(() => {
   getMovies();
 }, 100);
+
+// pagination.on('afterMove', event => {
+//   const currentPage = event.page;
+//   console.log(currentPage);
+// });
 
 export { getMovies, handleError, renderMovies };

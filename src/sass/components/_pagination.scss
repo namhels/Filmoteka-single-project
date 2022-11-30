@@ -1,0 +1,63 @@
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 40px;
+
+  @include mq(tablet) {
+    margin-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+.tui-prev.hide-prev,
+.tui-prev.tui-is-disabled,
+.tui-first.tui-is-disabled,
+.tui-next.hide-next,
+.tui-next.tui-is-disabled,
+.tui-last.tui-is-disabled,
+.tui-next-is-ellip.change-next,
+.tui-prev-is-ellip.change-prev {
+  display: none;
+}
+
+.tui-next-is-ellip.change-next,
+.tui-prev-is-ellip.change-prev {
+  @include mq(tablet) {
+    display: flex;
+  }
+}
+
+.tui-page-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font($fw: 500, $fs: 12px, $lh: 16px, $color: $primaryTextColor);
+}
+.tui-page-btn:not(:last-child) {
+  margin-right: 16px;
+}
+
+.tui-is-selected {
+  width: 40px;
+  height: 40px;
+
+  background-color: $accentColor;
+  border-radius: 5px;
+}
+
+.tui-first,
+.tui-last {
+  width: 40px;
+  height: 40px;
+  background-color: $footerBcgColor;
+}
+
+// .tui-is-disabled {
+// }
+// .tui-first-child {
+// }
+// .tui-last-child {
+// }
+// .tui-last {
+// }

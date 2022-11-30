@@ -18,6 +18,8 @@ const refs = {
 
   watched: document.querySelector('[data-btn="watched"]'),
   queue: document.querySelector('[data-btn="queue"]'),
+
+  pagination: document.querySelector('.tui-pagination'),
 };
 
 export default refs;

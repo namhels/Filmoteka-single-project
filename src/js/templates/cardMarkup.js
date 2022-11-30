@@ -64,6 +64,12 @@ const cardMarkup = film => {
           </button>
         </li>
       </ul>
+      <button
+            class="button card__button card__button--on card__button--trailer"
+            type="button"
+            data-btn="change trailer"
+          ><svg class="trailer__icon"><use href="./images/spriteIcons.svg#icon-youtube1"></use></svg>trailer
+      </button>
     </div>`;
 };
 

@@ -170,8 +170,41 @@
   @include font($fw: 500, $fs: 12px, $lh: 20px);
 }
 
-.card__buttons-item:not(:last-child) {
+.card__buttons-item:first-child {
   margin-right: 15px;
+}
+
+.card__button--trailer {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  // color: #ffffff;
+}
+
+.card__button--trailer::after {
+  margin-left: 10px;
+  display: block;
+  content: '';
+  width: 32px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  // color: #000;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url(../images/spriteIcons.svg#icon-youtube1);
+}
+
+.trailer__icon {
+  // fill: currentColor;
+  margin-right: 10px;
+
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .card__button {

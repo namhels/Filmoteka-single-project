@@ -4,8 +4,6 @@ import { handleError, renderMovies } from '../components/getMovies';
 import { onError } from '../components/library';
 
 const api = new apiThemoviedb();
-// let inputValue = '';
-// let totalPages = 0;
 
 const onFormSearch = async e => {
   e.preventDefault();
