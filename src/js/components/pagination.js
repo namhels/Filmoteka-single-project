@@ -1,11 +1,10 @@
 import Pagination from 'tui-pagination';
 import spriteIcons from '../../images/spriteIcons.svg';
 import apiThemoviedb from '../api/apiThemoviedb';
-import { renderMovies } from '../components/getMovies';
 
 const api = new apiThemoviedb();
 
-const paginationActive = (results, page, totalItems) => {
+const paginationActive = (results, page, totalItems, OnPagination) => {
   const arrowIcon = `${spriteIcons}#icon-arrow`;
   const dotsIcon = `${spriteIcons}#icon-dots`;
 
@@ -34,14 +33,9 @@ const paginationActive = (results, page, totalItems) => {
     },
   };
 
+  OnPagination();
   const pagination = new Pagination('pagination', options);
-
-  pagination.on('afterMove', async event => {
-    const currentPage = event.page;
-    api.page = currentPage;
-    const { results } = await api.getTrendingMovies();
-    renderMovies(results);
-  });
+  pagination.on('afterMove', OnPagination);
 };
 
 export default paginationActive;

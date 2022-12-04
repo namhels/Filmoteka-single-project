@@ -8,8 +8,15 @@ const api = new apiThemoviedb();
 const getMovies = async () => {
   try {
     const { results, page, total_results: totalItems } = await api.getTrendingMovies();
+
     refs.pagination.classList.remove('visually-hidden');
-    paginationActive(results, page, totalItems);
+    const OnPagination = async ({ page }) => {
+      api.page = page;
+      const { results } = await api.getTrendingMovies();
+      renderMovies(results);
+    };
+    paginationActive(results, page, totalItems, OnPagination);
+
     renderMovies(results);
   } catch (error) {
     handleError(error);
@@ -20,6 +27,7 @@ const handleError = err => {
   refs.films.innerHTML = '';
   refs.films.classList.remove('films');
   refs.error.classList.add('error');
+  refs.pagination.classList.add('visually-hidden');
   refs.error.textContent = err.message;
 };
 

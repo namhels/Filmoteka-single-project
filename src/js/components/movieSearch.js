@@ -18,11 +18,19 @@ const onFormSearch = async e => {
 
   try {
     const { results, page, total_results: totalItems } = await api.movieSearch();
-    // refs.pagination.classList.remove('visually-hidden');
-    // paginationActive(results, page, totalItems);
+
+    refs.pagination.classList.remove('visually-hidden');
+    const OnPagination = async ({ page }) => {
+      api.page = page;
+      const { results } = await api.movieSearch();
+      renderMovies(results);
+    };
+    paginationActive(results, page, totalItems, OnPagination);
+
     renderMovies(results);
 
     if (!results.length) {
+      refs.pagination.classList.add('visually-hidden');
       onError('Enter the correct movie name');
       return;
     }

@@ -1,11 +1,9 @@
 .tui-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
   padding-bottom: 40px;
 
   @include mq(tablet) {
-    margin-top: 50px;
     padding-bottom: 60px;
   }
 }
