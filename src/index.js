@@ -8,4 +8,4 @@ import './js/components/getMovies';
 import './js/components/movieSearch';
 import './js/components/getCard';
 import './js/components/library';
-import './js/components/pagination';
+// import './js/components/pagination';

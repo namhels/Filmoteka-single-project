@@ -1,5 +1,6 @@
 import refs from '../services/refs';
 import apiThemoviedb from '../api/apiThemoviedb';
+import paginationActive from '../components/pagination';
 import { handleError, renderMovies } from '../components/getMovies';
 import { onError } from '../components/library';
 
@@ -16,17 +17,15 @@ const onFormSearch = async e => {
   api.query = inputValue;
 
   try {
-    const {
-      results,
-      page,
-      total_pages: totalPages,
-      total_results: totalResults,
-    } = await api.movieSearch();
+    const { results, page, total_results: totalItems } = await api.movieSearch();
+    // refs.pagination.classList.remove('visually-hidden');
+    // paginationActive(results, page, totalItems);
+    renderMovies(results);
+
     if (!results.length) {
       onError('Enter the correct movie name');
       return;
     }
-    renderMovies(results);
   } catch (error) {
     handleError(error);
   }

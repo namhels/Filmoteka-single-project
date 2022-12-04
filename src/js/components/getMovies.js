@@ -1,13 +1,15 @@
 import refs from '../services/refs';
 import apiThemoviedb from '../api/apiThemoviedb';
-// import pagination from '../components/pagination';
+import paginationActive from '../components/pagination';
 import { moviesMarkup } from '../templates/moviesMarkup';
 
 const api = new apiThemoviedb();
 
 const getMovies = async () => {
   try {
-    const { results, page, total_pages: totalPages } = await api.getTrendingMovies();
+    const { results, page, total_results: totalItems } = await api.getTrendingMovies();
+    refs.pagination.classList.remove('visually-hidden');
+    paginationActive(results, page, totalItems);
     renderMovies(results);
   } catch (error) {
     handleError(error);
@@ -31,10 +33,5 @@ const renderMovies = movies => {
 setTimeout(() => {
   getMovies();
 }, 100);
-
-// pagination.on('afterMove', event => {
-//   const currentPage = event.page;
-//   console.log(currentPage);
-// });
 
 export { getMovies, handleError, renderMovies };

@@ -9,6 +9,7 @@ const onWatched = () => {
   if (!watched || !watched.length) {
     onError('sorry no movies added');
   } else {
+    refs.pagination.classList.add('visually-hidden');
     renderMovies(watched);
   }
 };
