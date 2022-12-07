@@ -33,7 +33,6 @@ const paginationActive = (results, page, totalItems, OnPagination) => {
     },
   };
 
-  OnPagination();
   const pagination = new Pagination('pagination', options);
   pagination.on('afterMove', OnPagination);
 };

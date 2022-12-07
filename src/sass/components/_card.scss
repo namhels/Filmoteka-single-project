@@ -178,33 +178,17 @@
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  // color: #ffffff;
-}
-
-.card__button--trailer::after {
-  margin-left: 10px;
-  display: block;
-  content: '';
-  width: 32px;
-  height: 20px;
-  border-radius: 8px;
-  background-color: #fff;
-  // color: #000;
-  background-size: cover;
-  background-position: 50%;
-  background-image: url(../images/spriteIcons.svg#icon-youtube1);
 }
 
 .trailer__icon {
-  // fill: currentColor;
-  margin-right: 10px;
-
-  display: inline-block;
+  margin-right: 2px;
+  fill: #ff0000;
   width: 28px;
   height: 20px;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
+}
+.trailer__icon:hover {
+  // fill: #0400ff;
+  // scale: 1.5;
 }
 
 .card__button {
