@@ -18,6 +18,7 @@ const onChangeWatchedQueue = film => {
     ref.changeWatched.classList.remove('card__button--on');
   }
   const onChangeWatched = () => {
+    console.log(8);
     const watched = get('watched');
     if (!watched || !watched.some(el => el.id === film.id)) {
       saveUniqueArrayItemToStorage('watched', film);

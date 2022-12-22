@@ -22,7 +22,6 @@ const cardMarkup = film => {
   );
   trailer = trailer ? trailer : videos.results[0];
   const trailerKey = trailer?.key;
-  console.log(videos);
 
   return `
     <div class="card__image-wrapper">
@@ -82,9 +81,9 @@ const cardMarkup = film => {
     </div>
     ${
       trailerKey
-        ? `<div class="trailer is-hidden">
+        ? `
       <iframe
-      class="trailer__iframe"
+      class="trailer"
       width="240"
       height="135"
       src="https://www.youtube.com/embed/${trailerKey}"
@@ -93,7 +92,7 @@ const cardMarkup = film => {
       allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope; picture-in-picture"
       allowfullscreen>
       </iframe>
-    </div>`
+      `
         : '<div></div>'
     }`;
 };
