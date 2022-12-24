@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: 'Poppins', sans-serif;
+}
+
+// body {
+//   background: #9ddd1e;
+// }
+
+.dev-modal {
+  position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 500px;
+
+  background: #9ddd1e;
+}
+.dev-modal__title {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  line-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10vw;
+  color: #fff;
+  font-weight: 900;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.banner .blocks {
+  position: relative;
+  display: block;
+  width: 5vw;
+  height: 5vh;
+  animation: animate 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateZ(2000px);
+    background: url(../images/photoLS.jpg);
+    // background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: translateZ(0px);
+    background: url(../images/photoLS.jpg);
+    // background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  }
+}
+
+.dev-modal.active .banner .blocks {
+  animation: animateTwo 2s ease-in-out forwards;
+  background: url(../images/photoLS.jpg);
+  // background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@keyframes animateTwo {
+  0% {
+    transform: translateZ(0px);
+    background: url(../images/photoLS.jpg);
+    // background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: translateZ(2000px);
+    background: url(../images/photoLS.jpg);
+    // background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  }
+}

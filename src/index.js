@@ -8,4 +8,5 @@ import './js/components/getMovies';
 import './js/components/movieSearch';
 import './js/components/getCard';
 import './js/components/library';
+import './js/components/devModal';
 // import './js/components/pagination';
