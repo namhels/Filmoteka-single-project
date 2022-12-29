@@ -1,109 +1,155 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  // font-family: 'Poppins', sans-serif;
-}
-
-// body {
-//   background: #9ddd1e;
-// }
-
 .dev-modal {
-  position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  width: 100%;
-  height: 100vh;
-  transform-style: preserve-3d;
-  perspective: 500px;
+  // position: absolute;
+  // bottom: 0;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // width: 0;
+  // height: 0;
+  // border-radius: 50%;
+  // transition: 0.5s all ease;
 
-  background: #9ddd1e;
+  // &.is-open {
+  //   width: 100%;
+  //   height: 100%;
+  //   border-radius: 0;
+  //   transition: 0.5s width ease 0.3s, 0.5s height ease 0.3s, 0.5s border-radius ease 0.5s;
+  // }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+  // border: 1px solid;
+  border-radius: 16px;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.22);
+
+  @include mq(tablet) {
+    min-width: 618px;
+  }
+
+  @include mq(desktop) {
+    min-width: 882px;
+  }
+}
+.dev-modal__photo {
+  margin-bottom: 10px;
+  border-radius: 16px;
+
+  max-width: 280px;
+
+  @include mq(tablet) {
+    min-width: 618px;
+  }
+
+  @include mq(desktop) {
+    min-width: 882px;
+  }
 }
 .dev-modal__title {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  line-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  font-size: 10vw;
-  color: #fff;
-  font-weight: 900;
-}
-
-.banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+.dev-modal__title-span {
+  margin-top: 10px;
+  @include font($fw: 900, $fs: 22px, $lh: 16px, $color: $accentColor);
 }
 
-.banner .blocks {
-  position: relative;
-  display: block;
-  width: 5vw;
-  height: 5vh;
-  animation: animate 2s ease-in-out forwards;
-  animation-delay: 1s;
-}
+// .dev-modal {
+//   position: relative;
+//   // display: flex;
+//   // flex-direction: column;
+//   // justify-content: center;
+//   // align-items: center;
+//   width: 100%;
+//   height: 100vh;
+//   transform-style: preserve-3d;
+//   perspective: 500px;
 
-@keyframes animate {
-  0% {
-    transform: translateZ(2000px);
-    background: url(../images/photoLS.jpg);
-    // background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    transform: translateZ(0px);
-    background: url(../images/photoLS.jpg);
-    // background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
-  }
-}
+//   background: #9ddd1e;
+// }
+// .dev-modal__title {
+//   position: relative;
+//   width: 100%;
+//   height: 100vh;
+//   text-align: center;
+//   line-height: 100vh;
+//   font-family: 'Poppins', sans-serif;
+//   font-size: 10vw;
+//   color: #fff;
+//   font-weight: 900;
+// }
 
-.dev-modal.active .banner .blocks {
-  animation: animateTwo 2s ease-in-out forwards;
-  background: url(../images/photoLS.jpg);
-  // background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
+// .banner {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
-@keyframes animateTwo {
-  0% {
-    transform: translateZ(0px);
-    background: url(../images/photoLS.jpg);
-    // background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    transform: translateZ(2000px);
-    background: url(../images/photoLS.jpg);
-    // background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
-  }
-}
+// .banner .blocks {
+//   position: relative;
+//   display: block;
+//   width: 5vw;
+//   height: 5vh;
+//   animation: animate 2s ease-in-out forwards;
+//   animation-delay: 1s;
+// }
+
+// @keyframes animate {
+//   0% {
+//     transform: translateZ(2000px);
+//     background: url(../images/photoLS.jpg);
+//     // background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: fixed;
+//     background-size: cover;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+//   }
+//   100% {
+//     transform: translateZ(0px);
+//     background: url(../images/photoLS.jpg);
+//     // background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: fixed;
+//     background-size: cover;
+//     border: 1px solid rgba(0, 0, 0, 0.1);
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+//   }
+// }
+
+// .dev-modal.active .banner .blocks {
+//   animation: animateTwo 2s ease-in-out forwards;
+//   background: url(../images/photoLS.jpg);
+//   // background-repeat: no-repeat;
+//   background-position: center;
+//   background-attachment: fixed;
+//   background-size: cover;
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+// }
+
+// @keyframes animateTwo {
+//   0% {
+//     transform: translateZ(0px);
+//     background: url(../images/photoLS.jpg);
+//     // background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: fixed;
+//     background-size: cover;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+//   }
+//   100% {
+//     transform: translateZ(2000px);
+//     background: url(../images/photoLS.jpg);
+//     // background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: fixed;
+//     background-size: cover;
+//     border: 1px solid rgba(0, 0, 0, 0.1);
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+//   }
+// }
