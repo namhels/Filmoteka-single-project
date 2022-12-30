@@ -3,6 +3,7 @@ import apiThemoviedb from '../api/apiThemoviedb';
 import cardMarkup from '../templates/cardMarkup';
 import { handleError } from '../components/getMovies';
 import { onChangeWatchedQueue } from '../components/watchedQueue';
+import { onWatched, onQueue } from '../components/library';
 import { trailerModal } from '../components/trailerModal';
 // import { renderMovies } from '../components/library';
 
@@ -47,6 +48,14 @@ const onCardClose = () => {
   refs.backdrop.classList.add('is-hidden');
   window.removeEventListener('keydown', onEscapePress);
   refs.backdrop.removeEventListener('click', onBackdropClose);
+
+  if (!refs.home.classList.contains('nav-list__item--current')) {
+    if (refs.watched.classList.contains('button--on')) {
+      onWatched();
+    } else {
+      onQueue();
+    }
+  }
 };
 
 const onEscapePress = e => {

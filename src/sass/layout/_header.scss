@@ -73,15 +73,29 @@
   justify-content: space-between;
   align-items: baseline;
 }
+
 .logo {
   display: flex;
   align-items: center;
 }
+
+.logo:hover .logo__icon,
+.logo:focus .logo__icon {
+  fill: $accentColor;
+  transform: scale(1.3);
+}
+
+.logo:hover .logo__text,
+.logo:focus .logo__text {
+  letter-spacing: 3px;
+}
+
 .logo__icon {
-  // fill: $iconColor;
   // fill: currentColor;
   margin-right: 10px;
+  transition: fill 250ms, transform 250ms;
 }
+
 .logo__text {
   display: none;
 
@@ -89,12 +103,19 @@
     display: block;
 
     @include font($fw: 500, $fs: 30px, $lh: 35px, $color: $secondaryTextColor);
+    letter-spacing: 1px;
+    transition: 250ms;
+
+    text-shadow: 10px -10px 15px $accentColor, -10px 10px 15px $accentColor;
+    -webkit-text-stroke: 2px $accentColor;
+    -webkit-text-fill-color: transparent;
   }
 }
 
 .nav-list {
   display: flex;
 }
+
 .nav-list__item {
   position: relative;
 
@@ -102,11 +123,18 @@
   align-items: center;
   text-transform: uppercase;
   cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @include font($fw: 500, $fs: 12px, $lh: 14px, $color: $secondaryTextColor);
   &:not(:last-child) {
     margin-right: 39px;
   }
+}
+
+.nav-list__item:hover,
+.nav-list__item:focus {
+  color: $accentColor;
+  transform: scale(1.2);
 }
 
 .nav-list__item--current::after {
@@ -133,15 +161,6 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-
-  // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  // transition: opacity 250ms linear, visibility 250ms linear;
-  // &.is-hidden {
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   pointer-events: none;
-  // }
 
   @include mq(tablet) {
     width: 336px;

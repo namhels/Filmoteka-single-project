@@ -5,6 +5,8 @@ const refs = {
 
   formHeader: document.querySelector('.header-form__wrapper'),
   btnHeader: document.querySelector('.header__buttons'),
+  quantityWatched: document.querySelector('.quantity-watched'),
+  quantityQueue: document.querySelector('.quantity-queue'),
 
   films: document.querySelector('.films'),
   error: document.querySelector('.error'),

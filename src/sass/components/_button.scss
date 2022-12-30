@@ -6,8 +6,7 @@
   margin-top: 46px;
   padding-bottom: 65px;
 }
-// .buttons__item {
-// }
+
 .header__buttons-item:not(:last-child) {
   margin-right: 20px;
 
@@ -15,6 +14,15 @@
     margin-right: 15px;
   }
 }
+
+.quantity-watched,
+.quantity-queue {
+  margin-left: 5px;
+  padding: 1px 8px;
+  border: 1px solid $secondaryTextColor;
+  border-radius: 50%;
+}
+
 .button {
   display: flex;
   justify-content: center;

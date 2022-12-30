@@ -1,3 +1,4 @@
+import refs from '../services/refs';
 import { get } from '../services/localStorage';
 import {
   saveUniqueArrayItemToStorage,
@@ -19,12 +20,14 @@ const onChangeWatchedQueue = film => {
   }
   const onChangeWatched = () => {
     const watched = get('watched');
+
     if (!watched || !watched.some(el => el.id === film.id)) {
       saveUniqueArrayItemToStorage('watched', film);
       ref.changeWatched.textContent = 'REMOVE TO WATCHED';
       ref.changeWatched.classList.remove('card__button--on');
       deleteFilmFromQueue();
     } else {
+      refs.quantityWatched.textContent = watched.length - 1;
       deleteFilmFromWatched();
     }
   };
