@@ -1,14 +1,27 @@
-// const bannerRef = document.getElementsByClassName('banner')[0];
-// const blocksRef = document.getElementsByClassName('blocks');
-// const sectionRef = document.querySelector('.dev-modal');
+import refs from '../services/refs';
 
-// for (var i = 1; i < 400; i++) {
-//   bannerRef.innerHTML += "<div class='blocks'></div>";
-//   const duration = Math.random() * 5;
-//   blocksRef[i].style.animationDuration = 2 + duration + 's';
-//   blocksRef[i].style.animationDelay = duration + 's';
-// }
+const onDevModal = () => {
+  refs.devBackdrop.classList.remove('is-hidden');
+  window.addEventListener('keydown', onEscapePress);
+  refs.devBackdrop.addEventListener('click', onBackdropClose);
+};
 
-// setTimeout(() => {
-//   sectionRef.classList.add('active');
-// }, 14000);
+const onCardClose = () => {
+  refs.devBackdrop.classList.add('is-hidden');
+  window.removeEventListener('keydown', onEscapePress);
+  refs.devBackdrop.removeEventListener('click', onBackdropClose);
+};
+
+const onEscapePress = e => {
+  if (e.code === 'Escape') {
+    onCardClose();
+  }
+};
+
+const onBackdropClose = e => {
+  if (e.target === e.currentTarget) {
+    onCardClose();
+  }
+};
+
+refs.footerText.addEventListener('click', onDevModal);

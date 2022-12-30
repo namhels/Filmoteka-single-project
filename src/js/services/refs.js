@@ -20,6 +20,9 @@ const refs = {
   queue: document.querySelector('[data-btn="queue"]'),
 
   pagination: document.querySelector('.tui-pagination'),
+
+  devBackdrop: document.querySelector('.dev-backdrop'),
+  footerText: document.querySelector('.footer__item--dev'),
 };
 
 export default refs;

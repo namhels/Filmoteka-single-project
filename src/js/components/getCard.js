@@ -3,7 +3,7 @@ import apiThemoviedb from '../api/apiThemoviedb';
 import cardMarkup from '../templates/cardMarkup';
 import { handleError } from '../components/getMovies';
 import { onChangeWatchedQueue } from '../components/watchedQueue';
-import { TrailerModal } from '../components/trailerModal';
+import { trailerModal } from '../components/trailerModal';
 // import { renderMovies } from '../components/library';
 
 const api = new apiThemoviedb();
@@ -23,7 +23,7 @@ const onCardOpen = async e => {
     renderCard(film);
     refs.backdrop.classList.remove('is-hidden');
     onChangeWatchedQueue(film);
-    TrailerModal();
+    trailerModal();
   } catch (error) {
     handleError(error);
   }

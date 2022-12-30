@@ -26,6 +26,7 @@
 }
 
 .footer__text {
+  cursor: pointer;
   @include font($fw: 400, $fs: 14px, $lh: 16px, $color: $footerTextColor);
 
   @include mq(tablet) {
@@ -35,11 +36,9 @@
 
 .footer__text--decoration-underline {
   text-decoration-line: underline;
-  cursor: pointer;
 }
 
 .footer__icon {
   margin-left: 10px;
   margin-right: 10px;
-  cursor: pointer;
 }

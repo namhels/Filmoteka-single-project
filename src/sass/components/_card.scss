@@ -74,7 +74,8 @@
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card__close:hover {
+.card__close:hover,
+.card__close:focus {
   fill: $accentColor;
   transform: rotate(-90deg);
 }
