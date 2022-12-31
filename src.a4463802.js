@@ -144,4 +144,4 @@ module.exports="/Filmoteka-single-project/not_found_ver.a1e43c7d.jpg";
 },{"../services/refs":"THmy"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/components/changeHeader"),require("./js/api/apiThemoviedb"),require("./js/components/getGenres"),require("./js/components/getMovies"),require("./js/components/movieSearch"),require("./js/components/getCard"),require("./js/components/library"),require("./js/components/devModal");
 },{"./sass/main.scss":"clu1","./js/components/changeHeader":"VL39","./js/api/apiThemoviedb":"Ntrw","./js/components/getGenres":"aYLB","./js/components/getMovies":"nT17","./js/components/movieSearch":"IMH5","./js/components/getCard":"U1nt","./js/components/library":"wZ4W","./js/components/devModal":"Mjyo"}]},{},["Focm"], null)
-//# sourceMappingURL=/Filmoteka-single-project/src.90aaaf24.js.map
+//# sourceMappingURL=/Filmoteka-single-project/src.a4463802.js.map
