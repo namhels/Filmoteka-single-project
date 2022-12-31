@@ -30,10 +30,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
   @include font($fw: 500, $fs: 12px, $lh: 16px, $color: $primaryTextColor);
+  transition: all 250ms;
 }
+
+.tui-page-btn:hover,
+.tui-page-btn:focus {
+  background-color: rgba(255, 106, 8, 0.75);
+}
+
 .tui-page-btn:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 2px;
 }
 
 .tui-is-selected {

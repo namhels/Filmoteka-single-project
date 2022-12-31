@@ -79,37 +79,57 @@
   align-items: center;
 }
 
-.logo:hover .logo__icon,
-.logo:focus .logo__icon {
-  stroke: $accentColor;
-  transform: scale(1.3);
-}
-
-.logo:hover .logo__text,
-.logo:focus .logo__text {
-  letter-spacing: 3px;
-}
-
 .logo__icon {
   stroke: #818181;
   margin-right: 10px;
   transition: fill 250ms, transform 250ms;
 }
 
+.logo:hover .logo__icon,
+.logo:focus .logo__icon {
+  animation: pulse-logo 800ms forwards linear;
+}
+
+@keyframes pulse-logo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  65% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  85% {
+    transform: scale(1.2);
+  }
+  100% {
+    stroke: $accentColor;
+    transform: scale(1.5);
+  }
+}
+
 .logo__text {
   display: none;
-
   @include mq(tablet) {
     display: block;
-
     @include font($fw: 500, $fs: 30px, $lh: 35px, $color: $secondaryTextColor);
     letter-spacing: 1px;
-    transition: 250ms;
+    transition: all 250ms;
 
     text-shadow: 10px -10px 15px $accentColor, -10px 10px 15px $accentColor;
-    -webkit-text-stroke: 2px $accentColor;
+    -webkit-text-stroke: 1px $secondaryTextColor;
     -webkit-text-fill-color: transparent;
   }
+}
+
+.logo:hover .logo__text,
+.logo:focus .logo__text {
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px $accentColor;
 }
 
 .nav-list {
@@ -118,7 +138,6 @@
 
 .nav-list__item {
   position: relative;
-
   display: flex;
   align-items: center;
   text-transform: uppercase;

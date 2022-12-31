@@ -48,14 +48,27 @@
 }
 
 .footer__icon {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
   fill: $accentColor;
   transition: all 500ms;
 }
 
-.footer__icon:hover,
-.footer__icon:focus {
-  fill: red;
-  transform: scale(2.2);
+.footer__text--dev:hover .footer__icon,
+.footer__text--dev:focus .footer__icon {
+  animation: pulse 800ms infinite linear;
+  // animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    fill: red;
+    transform: scale(2.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

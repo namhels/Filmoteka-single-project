@@ -18,8 +18,10 @@ const onWatched = () => {
 };
 
 const onQueue = () => {
+  const watched = get('watched');
   const queue = get('queue');
   refs.quantityQueue.textContent = queue.length;
+  refs.quantityWatched.textContent = watched.length;
   refs.queue.classList.replace('button--off', 'button--on');
   refs.watched.classList.add('button--off');
   if (!queue || !queue.length) {
