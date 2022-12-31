@@ -87,7 +87,7 @@
 
 .logo:hover .logo__icon,
 .logo:focus .logo__icon {
-  animation: pulse-logo 800ms forwards linear;
+  animation: pulse-logo 1000ms infinite linear;
 }
 
 @keyframes pulse-logo {
@@ -98,17 +98,17 @@
     transform: scale(1.5);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   75% {
-    transform: scale(1.5);
+    transform: scale(1.6);
   }
   85% {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   100% {
     stroke: $accentColor;
-    transform: scale(1.5);
+    transform: scale(1);
   }
 }
 
@@ -117,10 +117,9 @@
   @include mq(tablet) {
     display: block;
     @include font($fw: 500, $fs: 30px, $lh: 35px, $color: $secondaryTextColor);
+
     letter-spacing: 1px;
     transition: all 250ms;
-
-    text-shadow: 10px -10px 15px $accentColor, -10px 10px 15px $accentColor;
     -webkit-text-stroke: 1px $secondaryTextColor;
     -webkit-text-fill-color: transparent;
   }
@@ -130,6 +129,7 @@
 .logo:focus .logo__text {
   letter-spacing: 3px;
   -webkit-text-stroke: 1px $accentColor;
+  text-shadow: 10px -10px 15px $accentColor, -10px 10px 15px $accentColor;
 }
 
 .nav-list {
