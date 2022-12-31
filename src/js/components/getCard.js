@@ -50,11 +50,7 @@ const onCardClose = () => {
   refs.backdrop.removeEventListener('click', onBackdropClose);
 
   if (!refs.home.classList.contains('nav-list__item--current')) {
-    if (refs.watched.classList.contains('button--on')) {
-      onWatched();
-    } else {
-      onQueue();
-    }
+    refs.watched.classList.contains('button--off') ? onQueue() : onWatched();
   }
 };
 

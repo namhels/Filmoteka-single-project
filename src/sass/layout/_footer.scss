@@ -26,12 +26,21 @@
 }
 
 .footer__text {
-  cursor: pointer;
   @include font($fw: 400, $fs: 14px, $lh: 16px, $color: $footerTextColor);
 
   @include mq(tablet) {
     @include font($fw: 400, $fs: 16px, $lh: 19px, $color: $footerTextColor);
   }
+}
+
+.footer__text--dev {
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.footer__text--dev:hover,
+.footer__text--dev:focus {
+  letter-spacing: 0.5px;
 }
 
 .footer__text--decoration-underline {
@@ -41,4 +50,12 @@
 .footer__icon {
   margin-left: 10px;
   margin-right: 10px;
+  fill: $accentColor;
+  transition: all 500ms;
+}
+
+.footer__icon:hover,
+.footer__icon:focus {
+  fill: red;
+  transform: scale(2.2);
 }

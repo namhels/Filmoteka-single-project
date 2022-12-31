@@ -81,7 +81,7 @@
 
 .logo:hover .logo__icon,
 .logo:focus .logo__icon {
-  fill: $accentColor;
+  stroke: $accentColor;
   transform: scale(1.3);
 }
 
@@ -91,7 +91,7 @@
 }
 
 .logo__icon {
-  // fill: currentColor;
+  stroke: #818181;
   margin-right: 10px;
   transition: fill 250ms, transform 250ms;
 }
@@ -156,6 +156,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .header-form {
   position: absolute;
   width: 100%;
@@ -166,17 +167,19 @@
     width: 336px;
   }
 }
+
 .header-form__input {
   position: absolute;
   width: 100%;
   background-color: transparent;
   border: none;
-  border-bottom: 0.5px solid $secondaryTextColor;
+  border-bottom: 1px solid $secondaryTextColor;
 
   @include font($fw: 400, $fs: 14px, $lh: 16px, $color: $secondaryTextColor);
 
   &::placeholder {
     color: $secondaryTextColor;
+    transition: 250ms;
   }
 
   @include mq(tablet) {
@@ -185,9 +188,24 @@
     width: 336px;
   }
 }
+
+.header-form__input:hover::placeholder,
+.header-form__input:hover::placeholder {
+  color: $accentColor;
+  letter-spacing: 2px;
+}
+
 .header-form__submit {
   position: absolute;
   top: 0;
   right: 0;
   background-color: transparent;
+  stroke: $secondaryTextColor;
+  transition: all 250ms;
+}
+
+.header-form__submit:hover,
+.header-form__submit:focus {
+  stroke: $accentColor;
+  transform: scale(1.8);
 }
