@@ -95,19 +95,23 @@
     transform: scale(1);
   }
   50% {
+    stroke: $accentColor;
     transform: scale(1.5);
   }
   65% {
+    stroke: #818181;
     transform: scale(1.3);
   }
   75% {
+    stroke: $accentColor;
     transform: scale(1.6);
   }
   85% {
+    stroke: $accentColor;
     transform: scale(1.3);
   }
   100% {
-    stroke: $accentColor;
+    stroke: #818181;
     transform: scale(1);
   }
 }
